@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToyLand</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Poppins", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff6f61, #ffcc00);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #e0f7fa;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .products {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card button {
+      background: #ff6f61;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #ff3b2e;
+    }
+
+    .about, .contact {
+      padding: 40px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🧸 ToyLand</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Toys</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to ToyLand!</h1>
+    <p>Where fun and imagination come to life ✨</p>
+  </section>
+
+  <section class="products" id="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Teddy" alt="Teddy Bear">
+      <h3>Teddy Bear</h3>
+      <p>Soft & cuddly friend</p>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Car" alt="Toy Car">
+      <h3>Toy Car</h3>
+      <p>Fast and fun racing</p>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Blocks" alt="Blocks">
+      <h3>Building Blocks</h3>
+      <p>Build your imagination</p>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Doll" alt="Doll">
+      <h3>Doll</h3>
+      <p>Perfect play companion</p>
+      <button>Buy Now</button>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About ToyLand</h2>
+    <p>
+      ToyLand is a demo toy website created for learning and fun.
+      We believe every child deserves joy, creativity, and imagination.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: hello@toyland.com</p>
+    <p>Phone: +1 234 567 890</p>
+  </section>
+
+  <footer>
+    <p>© 2025 ToyLand. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
