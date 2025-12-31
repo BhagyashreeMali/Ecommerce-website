@@ -3,96 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen | Advanced Portfolio</title>
+    <title>Netflix Clone</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Next<span>Gen</span>.</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+    <div class="nav" id="nav">
+        <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+        <img class="nav-avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="User Avatar">
+    </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content hidden">
-            <h1>Web Design <span class="gradient-text">Redefined</span></h1>
-            <p>We build digital experiences that are fast, responsive, and impossible to ignore.</p>
-            <a href="#contact" class="btn-primary">Get in Touch</a>
-        </div>
-    </section>
-
-    <section id="about" class="section-padding">
-        <div class="container hidden">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>We are the future of tech.</h3>
-                    <p>Founded on the principles of minimalism and performance, NextGen bridges the gap between complex code and beautiful design. We specialize in AI integration, Data Structures, and fluid UI/UX.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-box">
-                        <h3>50+</h3>
-                        <p>Projects</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>100%</h3>
-                        <p>Satisfaction</p>
-                    </div>
-                </div>
+    <header class="banner">
+        <div class="banner-contents">
+            <h1 class="banner-title">Stranger Things</h1>
+            <div class="banner-buttons">
+                <button class="banner-button"><i class="fas fa-play"></i> Play</button>
+                <button class="banner-button"><i class="fas fa-info-circle"></i> My List</button>
             </div>
+            <h1 class="banner-description">
+                When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.
+            </h1>
         </div>
-    </section>
+        <div class="banner-fadeBottom"></div>
+    </header>
 
-    <section id="services" class="section-padding bg-dark">
-        <div class="container hidden">
-            <h2 class="section-title">Our Services</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Custom HTML5/CSS3 solutions tailored to your brand.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>App Design</h3>
-                    <p>Mobile-first layouts that work on any device.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI Solutions</h3>
-                    <p>Integrating machine learning models into web apps.</p>
-                </div>
-            </div>
+    <div class="row">
+        <h2>NETFLIX ORIGINALS</h2>
+        <div class="row-posters">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/scZlQQYnDVlnpxFTuEbNwROlYDg.jpg" alt="Movie">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/u3bZgnGQ9TWAso18quoE8aldnWt.jpg" alt="Movie">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" alt="Movie">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/wKiOkZTN9lUUUNZLmtfwubUPPFT.jpg" alt="Movie">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/vC324sdfcS313vh9QXwfBiKWqYq.jpg" alt="Movie">
+            <img class="row-poster row-posterLarge" src="https://image.tmdb.org/t/p/original/d5NXSklXo0qyLXEnNcgx2GR13yq.jpg" alt="Movie">
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="section-padding">
-        <div class="container hidden">
-            <h2 class="section-title">Contact Us</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message"></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+    <div class="row">
+        <h2>Trending Now</h2>
+        <div class="row-posters">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/r7XifzvtezNt31ypvsmb6Oqxw49.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/wigZBAmNrIhxp2FNGOROUAeHvdh.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x827F2fi0ML.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Movie">
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 NextGen. Built with HTML, CSS & JS.</p>
-    </footer>
+    <div class="row">
+        <h2>Top Rated</h2>
+        <div class="row-posters">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/9xgCnPpZ35XfT0e5Q80Hq57Z6Qy.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/2CAL2433ZeIihfX0CroDeOwVDZS.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/hmHA5jqxN3ISIAG8sxadECeV0Hv.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" alt="Movie">
+            <img class="row-poster" src="https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg" alt="Movie">
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
