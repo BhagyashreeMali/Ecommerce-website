@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from '../axios';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import mockData from '../mockData';
 import Modal from './Modal';
 
@@ -58,10 +59,15 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                         (movie) =>
                             ((isLargeRow && movie.poster_path) ||
                                 (!isLargeRow && movie.backdrop_path)) && (
-                                <img
+                                <motion.img
                                     key={movie.id}
                                     onClick={() => handleClick(movie)}
-                                    className={`max-h-[100px] object-contain transition-transform duration-450 hover:scale-110 rounded cursor-pointer ${isLargeRow ? "max-h-[250px]" : ""
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    whileHover={{ scale: 1.1, opacity: 1 }}
+                                    transition={{ duration: 0.2 }}
+                                    loading="lazy"
+                                    className={`max-h-[100px] object-contain rounded cursor-pointer ${isLargeRow ? "max-h-[250px]" : ""
                                         }`}
                                     src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
                                         }`}

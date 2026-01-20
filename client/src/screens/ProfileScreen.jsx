@@ -14,7 +14,7 @@ function ProfileScreen({ user, signOut }) {
                         alt="Avatar"
                     />
                     <div className="flex-1">
-                        <h2 className="bg-gray-500 p-4 text-base pl-5">user@netflix.com</h2>
+                        <h2 className="bg-gray-500 p-4 text-base pl-5">{user?.email}</h2>
                         <div className="mt-5">
                             <h3 className="border-b border-[#282c2d] pb-2 text-xl font-bold text-gray-400">Plans (Current Plan: Premium)</h3>
 

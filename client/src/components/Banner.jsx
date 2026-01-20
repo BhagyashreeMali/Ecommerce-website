@@ -4,6 +4,7 @@ import requests from '../requests';
 import { Play, Info } from 'lucide-react';
 import movieTrailer from 'movie-trailer';
 import YouTube from 'react-youtube';
+import { motion } from 'framer-motion';
 import mockData from '../mockData';
 import Modal from './Modal';
 
@@ -69,7 +70,12 @@ function Banner() {
                 backgroundPosition: "center center",
             }}
         >
-            <div className="ml-8 pt-36 h-48 w-full max-w-7xl">
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="ml-8 pt-36 h-48 w-full max-w-7xl"
+            >
                 <h1 className="text-5xl font-extrabold pb-1">
                     {movie?.title || movie?.name || movie?.original_name}
                 </h1>
@@ -90,7 +96,7 @@ function Banner() {
                 <h1 className="w-full max-w-[360px] h-20 pt-4 text-sm leading-snug drop-shadow-md">
                     {truncate(movie?.overview, 150)}
                 </h1>
-            </div>
+            </motion.div>
 
             <div className="absolute w-full h-28 bottom-0 bg-gradient-to-t from-[#111] to-transparent" />
             {trailerUrl && (

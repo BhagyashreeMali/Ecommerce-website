@@ -40,7 +40,7 @@ function App() {
           <LoginScreen />
         ) : (
           <Routes>
-            <Route path="/profiles" element={<ProfileSelectionScreen />} />
+            <Route path="/profiles" element={<ProfileSelectionScreen user={user} />} />
             <Route path="/profile" element={<ProfileScreen user={user} signOut={logout} />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/" element={<Navigate to="/profiles" />} />

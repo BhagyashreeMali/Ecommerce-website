@@ -1,7 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import axios from '../backend';
 
 function LoginScreen() {
     const [signIn, setSignIn] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(false);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+
+    const register = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post("/auth/register", {
+                email: emailRef.current.value,
+                password: passwordRef.current.value
+            });
+            // After register, automatically log in
+            login(e);
+        } catch (error) {
+            alert("Registration failed: " + (error.response?.data?.message || error.message));
+        }
+    };
+
+    const login = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("/auth/login", {
+                email: emailRef.current.value,
+                password: passwordRef.current.value
+            });
+            localStorage.setItem("user", JSON.stringify(res.data));
+            window.location.reload();
+        } catch (error) {
+            alert("Login failed: " + (error.response?.data || error.message));
+        }
+    };
+
+    const signInUser = (e) => {
+        if (isSignUp) {
+            register(e);
+        } else {
+            login(e);
+        }
+    }
 
     return (
         <div className="relative h-screen w-full bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20221102-popsignuptwoweeks-perspective_alpha_website_medium.jpg')] bg-no-repeat bg-center bg-cover">
@@ -27,19 +67,15 @@ function LoginScreen() {
                     {signIn ? (
                         <div className="max-w-[450px] w-full bg-black/75 p-16 mx-auto rounded-md text-white">
                             <form className="flex flex-col gap-4">
-                                <h1 className="text-3xl font-bold mb-4">Sign In</h1>
-                                <input placeholder="Email or mobile number" type="email" className="p-4 outline-none rounded bg-[#333] text-white focus:bg-[#454545] border-none" />
-                                <input placeholder="Password" type="password" className="p-4 outline-none rounded bg-[#333] text-white focus:bg-[#454545] border-none" />
+                                <h1 className="text-3xl font-bold mb-4">{isSignUp ? "Sign Up" : "Sign In"}</h1>
+                                <input ref={emailRef} placeholder="Email" type="email" className="p-4 outline-none rounded bg-[#333] text-white focus:bg-[#454545] border-none" />
+                                <input ref={passwordRef} placeholder="Password" type="password" className="p-4 outline-none rounded bg-[#333] text-white focus:bg-[#454545] border-none" />
                                 <button
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        localStorage.setItem("user", JSON.stringify({ email: "user@netflix.com" }));
-                                        window.location.reload();
-                                    }}
+                                    onClick={signInUser}
                                     type="submit"
                                     className="p-3 text-base font-bold bg-[#e50914] rounded cursor-pointer mt-6 mb-2 hover:bg-[#c11119] transition"
                                 >
-                                    Sign In
+                                    {isSignUp ? "Sign Up" : "Sign In"}
                                 </button>
 
                                 <div className="flex justify-between text-[#b3b3b3] text-sm">
@@ -51,7 +87,10 @@ function LoginScreen() {
 
                                 <div className="mt-10 text-[#737373]">
                                     <h4 className="text-base text-[#737373]">
-                                        New to Netflix? <span className="text-white hover:underline cursor-pointer" onClick={() => setSignIn(false)}>Sign up now.</span>
+                                        {isSignUp ? "Already have an account? " : "New to Netflix? "}
+                                        <span className="text-white hover:underline cursor-pointer" onClick={() => setIsSignUp(!isSignUp)}>
+                                            {isSignUp ? "Sign In now." : "Sign up now."}
+                                        </span>
                                     </h4>
                                     <p className="text-xs mt-4">
                                         This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className="text-blue-500 hover:underline cursor-pointer">Learn more.</span>

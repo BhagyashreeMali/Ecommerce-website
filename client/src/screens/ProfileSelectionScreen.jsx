@@ -1,15 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function ProfileSelectionScreen() {
+function ProfileSelectionScreen({ user }) {
     const navigate = useNavigate();
 
-    const profiles = [
-        { id: 1, name: "User", avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" },
-        { id: 2, name: "Kids", avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Netflix-avatar.png/640px-Netflix-avatar.png" }, // Using same for demo, ideally different
-        { id: 3, name: "Guest", avatar: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png" },
-        { id: 4, name: "Add Profile", avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/1200px-Plus_symbol.svg.png", isAdd: true },
-    ];
+    const profiles = user?.profiles || [];
 
     const handleSelectProfile = (profile) => {
         if (!profile.isAdd) {
