@@ -1,4 +1,4 @@
-# Netflix Clone (Full Stack)
+ # Netflix Clone (Full Stack)
  
 This is a full-stack Netflix Clone built with React (Vite), Node.js, Express, and MongoDB. It mimics the original Netflix UI/UX with high fidelity, including smooth animations and responsive design.
 
